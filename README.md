@@ -1,2 +1,2 @@
-# TZ_Tenzor_Automation
+# TZ_Tensor_Automation
 Тестовое задание. 
