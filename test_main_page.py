@@ -1,5 +1,4 @@
 from .pages.base_page import BasePage
-import time
 
 
 def test_guest_should_be_search_in_yandex(browser):

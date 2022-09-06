@@ -4,7 +4,6 @@ from .locators import BasePageLocators
 
 
 class BasePage:
-
     def __init__(self, browser, timeout=4):
         self.browser = browser
         self.url = 'https://yandex.ru/'
@@ -16,6 +15,7 @@ class BasePage:
     def go_to_images_page(self):
         link = self.browser.find_element(*BasePageLocators.IMAGES_LINK)
         link.click()
+        
 
     def should_be_search_box(self):
         assert self.is_element_present(*BasePageLocators.SEARCH_BOX), "Поле поиска нет на главной странице"
