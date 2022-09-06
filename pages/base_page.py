@@ -16,7 +16,6 @@ class BasePage:
         link = self.browser.find_element(*BasePageLocators.IMAGES_LINK)
         link.click()
         
-
     def should_be_search_box(self):
         assert self.is_element_present(*BasePageLocators.SEARCH_BOX), "Поле поиска нет на главной странице"
 
@@ -36,8 +35,9 @@ class BasePage:
         link = self.browser.find_element(*BasePageLocators.TENSOR_LINK)
         assert 'tensor.ru/' in link.get_attribute('href'), "Первая ссылка не ведет на сайт tensor.ru" 
 
-    def should_be_images_page(self):
+    def should_be_link_images(self):
         assert self.is_element_present(*BasePageLocators.IMAGES_LINK), "Ссылка <<Картинки>> не присутствует на странице"
+
 
     def is_element_present(self, how, what):
         try:
