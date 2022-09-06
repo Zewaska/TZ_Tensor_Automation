@@ -5,7 +5,7 @@ from .locators import BasePageLocators
 
 class BasePage:
 
-    def __init__(self, browser, timeout=10):
+    def __init__(self, browser, timeout=4):
         self.browser = browser
         self.url = 'https://yandex.ru/'
         self.browser.implicitly_wait(timeout)
@@ -17,7 +17,7 @@ class BasePage:
         link = self.browser.find_element(*BasePageLocators.IMAGES_LINK)
         link.click()
 
-    def should_be_search(self):
+    def should_be_search_box(self):
         assert self.is_element_present(*BasePageLocators.SEARCH_BOX), "Поле поиска нет на главной странице"
 
     def input_search_tensor(self):
@@ -31,6 +31,10 @@ class BasePage:
         search = self.browser.find_element(*BasePageLocators.SEARCH_BOX)
         search.send_keys(Keys.ENTER)
         assert self.browser.find_element(*BasePageLocators.SEARCH_CONTENT), "Таблица результатов поиска не появилась"
+
+    def should_be_first_link_tensor(self):
+        link = self.browser.find_element(*BasePageLocators.TENSOR_LINK)
+        assert 'tensor.ru/' in link.get_attribute('href'), "Первая ссылка не ведет на сайт tensor.ru" 
 
     def should_be_images_page(self):
         assert self.is_element_present(*BasePageLocators.IMAGES_LINK), "Ссылка <<Картинки>> не присутствует на странице"

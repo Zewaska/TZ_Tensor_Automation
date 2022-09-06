@@ -6,3 +6,5 @@ class BasePageLocators():
     IMAGES_LINK = (By.CLASS_NAME, "services-new__icon_images")
     SUGGEST_LIST = (By.CLASS_NAME, "mini-suggest__popup_visible")
     SEARCH_CONTENT = (By.ID, "search-result")
+    TENSOR_LINK = (By.CSS_SELECTOR, "a[accesskey='1']")
+    
