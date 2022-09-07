@@ -1,10 +1,12 @@
 """
 Реализация тестового сценария <<Картинки на яндексе>>
 """
+import allure
 from .pages.images_page import ImagesPage
 from .pages.main_page import MainPage
 
 
+@allure.description("Тестовый сценарий <<Картинки на яндексе>>")
 def test_guest_should_be_see_yandex_images(browser):
     # Создаем экземпляр класса, заходим на yandex.ru
     page = MainPage(browser)
@@ -17,8 +19,8 @@ def test_guest_should_be_see_yandex_images(browser):
     page.go_to_images_page()
     image_page = ImagesPage(browser, url = browser.current_url)
 
-    # Проверяем, что перешли на https://yandex.ru/images/
-    image_page.should_be_images_in_url()
+    # Проверяем, что перешли на url
+    image_page.should_be_images_in_url('https://yandex.ru/images/')
 
     # Открываем первую популярную категорию картинок
     image_page.open_first_popular_category()
