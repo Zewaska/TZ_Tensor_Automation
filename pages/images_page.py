@@ -6,7 +6,7 @@ class ImagesPage(BasePage):
     
     def __init__(self, browser, url, timeout=10):
         self.browser = browser
-        self.url = self.browser.current_url
+        self.url = url
         self.__name_category = None
         self.__first_image_small = None
         self.__first_image_src = None

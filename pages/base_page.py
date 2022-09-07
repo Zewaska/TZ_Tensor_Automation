@@ -1,5 +1,5 @@
 from selenium.common.exceptions import NoSuchElementException
-from selenium.webdriver.common.keys import Keys
+
 from .locators import BasePageLocators
 
 
@@ -25,15 +25,8 @@ class BasePage:
 
     def should_be_see_suggest(self):
         assert self.browser.find_element(*BasePageLocators.SUGGEST_LIST), "Таблица с подсказками не появилась"
+        
 
-    def should_be_see_result_search_after_press_enter(self):
-        search = self.browser.find_element(*BasePageLocators.SEARCH_BOX)
-        search.send_keys(Keys.ENTER)
-        assert self.browser.find_element(*BasePageLocators.SEARCH_CONTENT), "Таблица результатов поиска не появилась"
-
-    def should_be_first_link_tensor(self):
-        link = self.browser.find_element(*BasePageLocators.TENSOR_LINK)
-        assert 'tensor.ru/' in link.get_attribute('href'), "Первая ссылка не ведет на сайт tensor.ru" 
 
     def should_be_link_images(self):
         assert self.is_element_present(*BasePageLocators.IMAGES_LINK), "Ссылка <<Картинки>> не присутствует на странице"

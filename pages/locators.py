@@ -5,6 +5,9 @@ class BasePageLocators():
     SEARCH_BOX = (By.ID, "text")
     IMAGES_LINK = (By.CSS_SELECTOR, "a[data-id='images']")
     SUGGEST_LIST = (By.CLASS_NAME, "mini-suggest__popup_visible")
+    
+
+class SearchPageLocators():
     SEARCH_CONTENT = (By.ID, "search-result")
     TENSOR_LINK = (By.CSS_SELECTOR, "a[accesskey='1']")
 
