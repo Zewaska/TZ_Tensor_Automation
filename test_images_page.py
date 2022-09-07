@@ -1,13 +1,17 @@
-from .pages.base_page import BasePage
+"""
+Реализация тестового сценария <<Картинки на яндексе>>
+"""
 from .pages.images_page import ImagesPage
+from .pages.main_page import MainPage
 
 
 def test_guest_should_be_see_yandex_images(browser):
-    page = BasePage(browser)
+    page = MainPage(browser)
     page.open()
     page.should_be_link_images()
     page.go_to_images_page()
     image_page = ImagesPage(browser, url = browser.current_url)
+    image_page.should_be_images_in_url()
     image_page.open_first_popular_category()
     image_page.should_be_see_name_category_in_search_box()
     image_page.open_first_small_image()
@@ -16,3 +20,4 @@ def test_guest_should_be_see_yandex_images(browser):
     image_page.should_be_open_second_image()
     image_page.press_button_forward()
     image_page.should_be_image_from_step_eaght()
+ 
