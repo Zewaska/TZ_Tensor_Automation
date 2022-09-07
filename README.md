@@ -1,2 +1,4 @@
 # TZ_Tensor_Automation
-Тестовое задание. 
+
+Для переноса репозитория на свой локальный компьютер используется команда
+git clone https://github.com/Zewaska/TZ_Tensor_Automation.git
