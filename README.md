@@ -3,7 +3,7 @@
 Скопируйте репозиторий на свой локальный компьютер, используя команду:
 
 ```
-$ git clone https://github.com/Zewaska/TZ_Tensor_Automation.git
+git clone https://github.com/Zewaska/TZ_Tensor_Automation.git
 ```
 
 
