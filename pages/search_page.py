@@ -23,6 +23,6 @@ class SearchPage(BasePage):
         Проверяем, что первая ссылка ведет на url
         :params: url
         """
-        with allure.step("Проверяем, что первая ссылка ведет на {url}"):
+        with allure.step(f"Проверяем, что первая ссылка ведет на {url}"):
             link = self.browser.find_element(*SearchPageLocators.TENSOR_LINK)
             assert url in link.get_attribute('href'), "Первая ссылка не ведет на сайт {url}"

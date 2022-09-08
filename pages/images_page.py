@@ -24,7 +24,7 @@ class ImagesPage(BasePage):
         Проверяем, что перешли на url
         :params: url
         """
-        with allure.step("Проверяем, что перешли на {url}"):
+        with allure.step(f"Проверяем, что перешли на {url}"):
             self.browser.switch_to.window(self.browser.window_handles[1])
             assert url in self.browser.current_url,\
                 "В строке адреса страницы отсутствует {url}"
